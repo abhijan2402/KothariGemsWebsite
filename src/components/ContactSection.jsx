@@ -27,7 +27,7 @@ export default function ContactSection() {
             </div>
             <div className="flex items-center gap-3">
               <Mail className="text-yellow-500" size={18} />
-              <span>info@lunawatgems.com</span>
+              <span>info@Kotharigems.com</span>
             </div>
             <div className="flex items-center gap-3">
               <MapPin className="text-yellow-500" size={18} />

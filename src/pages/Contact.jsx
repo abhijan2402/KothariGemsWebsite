@@ -82,7 +82,7 @@ export default function Contact() {
                 Office Address
               </h3>
               <p className="text-gray-300">
-                Lunawat Gems, Jaipur, Rajasthan, India
+                Kothari Gems, Jaipur, Rajasthan, India
                 <br />
                 Pincode - 302003
               </p>
@@ -97,7 +97,7 @@ export default function Contact() {
               </p>
               <p className="text-gray-300 flex items-center gap-2 mt-1">
                 <Mail className="text-yellow-400" size={18} />
-                contact@lunawatgems.com
+                contact@Kotharigems.com
               </p>
             </div>
           </div>

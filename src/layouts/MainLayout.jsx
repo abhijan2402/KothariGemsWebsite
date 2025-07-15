@@ -3,6 +3,8 @@ import Footer from "../components/Footer";
 import { Outlet } from "react-router-dom";
 import { Star, Sparkles, Crown, Award, Gem, ShieldCheck } from "lucide-react";
 import { motion } from "framer-motion";
+import ScrollToTop from "../components/ScrollToTop";
+import BackToTopButton from "../components/BackToTopButton";
 
 export default function MainLayout() {
   const floatingElements = [
@@ -68,11 +70,13 @@ export default function MainLayout() {
 
       {/* Main content area */}
       <div className="relative z-10 flex flex-col min-h-screen">
+        <ScrollToTop />
         <Header />
-        <main className="flex-grow">
+        <main className="">
           <Outlet />
         </main>
         <Footer />
+        <BackToTopButton />
       </div>
     </div>
   );

@@ -1,62 +1,46 @@
-import { useState } from "react";
+// src/pages/ProductPage.js
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import gem1 from "../assets/gem1.avif";
-import gem2 from "../assets/gem2.avif";
-
-const products = [
-  {
-    id: "ruby123",
-    name: "Natural Ruby",
-    category: "Ruby",
-    image: gem1,
-    price: "₹25,000",
-    origin: "Burma",
-    description: "Deep red ruby known for elegance & energy.",
-  },
-  {
-    id: "emerald456",
-    name: "Certified Emerald",
-    category: "Emerald",
-    image: gem2,
-    price: "₹30,000",
-    origin: "Colombia",
-    description: "Lush green emerald symbolizing wisdom.",
-  },
-  {
-    id: "sapphire789",
-    name: "Blue Sapphire",
-    category: "Sapphire",
-    image: gem1,
-    price: "₹28,000",
-    origin: "Sri Lanka",
-    description: "Premium blue sapphire of calm & strength.",
-  },
-  {
-    id: "yellow111",
-    name: "Yellow Sapphire",
-    category: "Sapphire",
-    image: gem2,
-    price: "₹20,000",
-    origin: "Thailand",
-    description: "Yellow sapphire with positive vibrations.",
-  },
-];
-
-const categories = ["All", "Ruby", "Emerald", "Sapphire"];
+import { getProducts } from "../services/getProducts";
+import FilterPanel from "../components/FilterPanel";
+import Slider from "react-slick";
 
 export default function ProductPage() {
+  const [products, setProducts] = useState([]);
+  const [filteredProducts, setFilteredProducts] = useState([]);
+  const [modalOpen, setModalOpen] = useState(false);
+  const [modalImage, setModalImage] = useState("");
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+    autoplay: true,
+  };
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await getProducts();
+      setProducts(data);
+      setFilteredProducts(data);
+    };
+    fetchData();
+  }, []);
 
-  const [selectedCategory, setSelectedCategory] = useState("All");
-
-  const filteredProducts =
-    selectedCategory === "All"
-      ? products
-      : products.filter((p) => p.category === selectedCategory);
+  const handleFilterSelect = (category, subcategory) => {
+    const filtered = products.filter((p) => {
+      return (
+        (!category || p.category === category) &&
+        (!subcategory || p.subcategory === subcategory)
+      );
+    });
+    setFilteredProducts(filtered);
+  };
 
   return (
-
-      <section className=" min-h-screen text-white py-20 px-4 md:px-10">
-        {/* Header */}
+    <>
+      <section className="min-h-screen text-white py-20 px-4 md:px-48">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
@@ -71,29 +55,8 @@ export default function ProductPage() {
           </p>
         </motion.div>
 
-        {/* Filter */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.4 }}
-          className="flex flex-wrap justify-center gap-4 mb-12"
-        >
-          {categories.map((cat) => (
-            <button
-              key={cat}
-              onClick={() => setSelectedCategory(cat)}
-              className={`px-5 py-2 border rounded-full transition ${
-                selectedCategory === cat
-                  ? "bg-yellow-400 text-black border-yellow-400"
-                  : "border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-black"
-              }`}
-            >
-              {cat}
-            </button>
-          ))}
-        </motion.div>
+        <FilterPanel onFilterSelect={handleFilterSelect} />
 
-        {/* Product Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 max-w-6xl mx-auto">
           {filteredProducts.map((product, index) => (
             <motion.div
@@ -104,26 +67,59 @@ export default function ProductPage() {
               viewport={{ once: true }}
               className="bg-[#111] rounded-xl overflow-hidden border border-yellow-500/20 hover:border-yellow-500/40 shadow-lg hover:shadow-yellow-700/30 transition-shadow"
             >
-              <img
-                src={product.image}
-                alt={product.name}
-                className="w-full h-56 object-cover"
-              />
+              {product.images?.length > 1 ? (
+                // Carousel if more than one image
+                <Slider {...settings}>
+                  {product.images.map((img, i) => (
+                    <img
+                      key={i}
+                      src={img}
+                      alt={`Image ${i}`}
+                      className="w-full h-56 object-cover cursor-pointer"
+                      onClick={() => {
+                        setModalImage(img);
+                        setModalOpen(true);
+                      }}
+                    />
+                  ))}
+                </Slider>
+              ) : product.images?.length === 1 ? (
+                // Single image (no carousel)
+                <img
+                  src={product.images[0]}
+                  alt={product.title}
+                  className="w-full h-56 object-cover cursor-pointer"
+                  onClick={() => {
+                    setModalImage(product.images[0]);
+                    setModalOpen(true);
+                  }}
+                />
+              ) : (
+                // Fallback image if none found
+                <img
+                  src={product.image || "/default.jpg"}
+                  alt={product.title}
+                  className="w-full h-56 object-cover"
+                />
+              )}
+
               <div className="p-5 flex flex-col gap-2">
                 <h3 className="text-xl text-yellow-300 font-semibold">
-                  {product.name}
+                  {product.title || product.name}
                 </h3>
                 <p className="text-gray-400 text-sm">{product.description}</p>
                 <div className="flex justify-between items-center text-sm mt-2">
                   <span className="text-yellow-400 font-medium">
-                    {product.price}
+                    ₹{Number(product.price).toLocaleString()}
                   </span>
                   <span className="text-gray-500">
                     Origin: {product.origin}
                   </span>
                 </div>
                 <a
-                  href={`https://wa.me/919782488408?text=Hi, I want to enquire about: ${product.name}`}
+                  href={`https://wa.me/919782488408?text=Hi, I want to enquire about: ${
+                    product.title || product.name
+                  }`}
                   target="_blank"
                   rel="noreferrer"
                   className="mt-4 text-center border border-yellow-500 text-yellow-400 hover:bg-yellow-400 hover:text-black px-4 py-2 rounded-full text-sm transition w-full"
@@ -133,7 +129,45 @@ export default function ProductPage() {
               </div>
             </motion.div>
           ))}
+
+          {/* ✨ No Products Message */}
+          {filteredProducts.length === 0 && (
+            <motion.div
+              initial={{ y: -10, opacity: 0 }}
+              animate={{ y: [0, -10, 0], opacity: 1 }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+              className="col-span-full flex flex-col items-center mt-10"
+            >
+              <span className="text-5xl animate-bounce">😕</span>
+              <p className="mt-4 text-gray-400 text-lg font-medium">
+                No products available. Try changing filters or check back later.
+              </p>
+            </motion.div>
+          )}
         </div>
       </section>
+      {modalOpen && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className="fixed inset-0 bg-black/80 flex items-center justify-center z-50"
+          onClick={() => setModalOpen(false)}
+        >
+          <motion.img
+            src={modalImage}
+            alt="Zoomed"
+            initial={{ scale: 0.8 }}
+            animate={{ scale: 1 }}
+            exit={{ scale: 0.8 }}
+            className="max-w-4xl w-full max-h-[90vh] object-contain rounded shadow-lg"
+          />
+        </motion.div>
+      )}
+    </>
   );
 }

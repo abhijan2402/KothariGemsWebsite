@@ -23,7 +23,7 @@ export default function AboutSection() {
             About Us
           </h2>
           <p className="text-gray-300 mb-4 leading-relaxed">
-            Established in 2006, Lunawat Gems has carved out a unique name for
+            Established in 2006, Kothari Gems has carved out a unique name for
             itself in the gemstone manufacturing industry.
           </p>
           <p className="text-gray-400 mb-4">

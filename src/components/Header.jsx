@@ -38,7 +38,7 @@ export default function Header() {
           className="text-3xl md:text-4xl font-bold tracking-wide flex items-center font-cinzel space-x-2 group"
         >
           <span className="bg-gradient-to-r from-yellow-400 via-yellow-300 to-yellow-500 bg-clip-text text-transparent group-hover:brightness-110 transition duration-300">
-            Lunawat
+            Kothari
           </span>
           <span className="text-white group-hover:text-yellow-200 transition duration-300">
             Gems

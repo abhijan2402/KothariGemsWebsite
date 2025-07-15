@@ -15,7 +15,7 @@ export default function WhyChooseUs() {
         >
           <img
             src={gemDisplay}
-            alt="Lunawat Gems Display"
+            alt="Kothari Gems Display"
             className="w-full h-auto rounded-xl shadow-lg"
           />
         </motion.div>
@@ -29,7 +29,7 @@ export default function WhyChooseUs() {
           viewport={{ once: true }}
         >
           <h2 className="font-cinzel text-3xl md:text-4xl text-yellow-400 mb-6">
-            Why Choose Lunawat Gems?
+            Why Choose Kothari Gems?
           </h2>
           <p className="text-gray-300 mb-6">
             Our handcrafted gems are a symbol of elegance and authenticity. We

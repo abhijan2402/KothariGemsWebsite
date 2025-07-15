@@ -154,7 +154,7 @@ export default function HeroSection() {
               transition={{ delay: 0.6, duration: 0.8 }}
               className="block bg-gradient-to-r from-yellow-400 via-yellow-300 to-yellow-400 bg-clip-text text-transparent font-bold relative"
             >
-              LUNAWAT GEMS
+              Kothari GEMS
               {/* Decorative underline */}
               <motion.div
                 className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 h-1 bg-gradient-to-r from-transparent via-yellow-400 to-transparent"
