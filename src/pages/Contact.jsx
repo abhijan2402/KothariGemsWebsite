@@ -93,11 +93,11 @@ export default function Contact() {
               </h3>
               <p className="text-gray-300 flex items-center gap-2">
                 <Phone className="text-yellow-400" size={18} />
-                +91 97824 88408
+                +91 98290 98489
               </p>
               <p className="text-gray-300 flex items-center gap-2 mt-1">
                 <Mail className="text-yellow-400" size={18} />
-                contact@Kotharigems.com
+                contact@kotharigems.com
               </p>
             </div>
           </div>

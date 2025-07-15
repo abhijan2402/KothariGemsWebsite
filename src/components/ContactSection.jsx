@@ -12,7 +12,7 @@ export default function ContactSection() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl sm:text-4xl md:text-4xl font-cinzel text-3xl md:text-4xl text-yellow-400 mb-2">
+          <h2 className="sm:text-4xl font-cinzel text-3xl md:text-4xl text-yellow-400 mb-2">
             Get in Touch
           </h2>
           <p className="text-gray-400 mb-6">
@@ -23,11 +23,11 @@ export default function ContactSection() {
           <div className="space-y-4 text-sm text-gray-300">
             <div className="flex items-center gap-3">
               <Phone className="text-yellow-500" size={18} />
-              <span>+91 98765 43210</span>
+              <span>+91 98290 98489</span>
             </div>
             <div className="flex items-center gap-3">
               <Mail className="text-yellow-500" size={18} />
-              <span>info@Kotharigems.com</span>
+              <span>info@kotharigems.com</span>
             </div>
             <div className="flex items-center gap-3">
               <MapPin className="text-yellow-500" size={18} />
