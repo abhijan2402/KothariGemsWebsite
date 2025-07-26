@@ -47,7 +47,7 @@ export default function ProductPage() {
           transition={{ duration: 0.6 }}
           className="max-w-7xl mx-auto text-center mb-14"
         >
-          <h1 className="text-4xl md:text-5xl font-bold text-yellow-400 font-cinzel">
+          <h1 className="text-4xl md:text-5xl font-bold text-[#fff] font-cinzel">
             Discover Our Collection
           </h1>
           <p className="text-gray-400 mt-4 text-lg max-w-2xl mx-auto">
@@ -65,7 +65,7 @@ export default function ProductPage() {
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: index * 0.2 }}
               viewport={{ once: true }}
-              className="bg-[#111] rounded-xl overflow-hidden border border-yellow-500/20 hover:border-yellow-500/40 shadow-lg hover:shadow-yellow-700/30 transition-shadow"
+              className="bg-[#b1b7e106] rounded-xl overflow-hidden border border-blue-500/20 hover:border-blue-500/40 shadow-lg hover:shadow-blue-700/30 transition-shadow"
             >
               {product.images?.length > 1 ? (
                 // Carousel if more than one image
@@ -104,12 +104,12 @@ export default function ProductPage() {
               )}
 
               <div className="p-5 flex flex-col gap-2">
-                <h3 className="text-xl text-yellow-300 font-semibold">
+                <h3 className="text-xl text-[#e0e6ff] font-semibold">
                   {product.title || product.name}
                 </h3>
                 <p className="text-gray-400 text-sm">{product.description}</p>
                 <div className="flex justify-between items-center text-sm mt-2">
-                  <span className="text-yellow-400 font-medium">
+                  <span className="text-[#e0e6ff] font-medium">
                     ₹{Number(product.price).toLocaleString()}
                   </span>
                   <span className="text-gray-500">
@@ -122,7 +122,7 @@ export default function ProductPage() {
                   }`}
                   target="_blank"
                   rel="noreferrer"
-                  className="mt-4 text-center border border-yellow-500 text-yellow-400 hover:bg-yellow-400 hover:text-black px-4 py-2 rounded-full text-sm transition w-full"
+                  className="mt-4 text-center border border-[#fff] text-[#ffff] hover:bg-[#fff] hover:text-black px-4 py-2 rounded-full text-sm transition w-full"
                 >
                   Enquire on WhatsApp
                 </a>

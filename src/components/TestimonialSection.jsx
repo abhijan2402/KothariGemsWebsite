@@ -69,7 +69,7 @@ const renderStars = (rating) => (
   <div className="flex justify-center gap-1 mt-2">
     {[...Array(5)].map((_, i) =>
       i < rating ? (
-        <Star key={i} size={18} className="text-yellow-400 fill-yellow-400" />
+        <Star key={i} size={18} className="text-[white] fill-[#fff]" />
       ) : (
         <Star key={i} size={18} className="text-gray-600" />
       )
@@ -86,7 +86,7 @@ export default function Testimonials() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="sm:text-4xl font-cinzel text-3xl md:text-4xl text-yellow-400 mb-2"
+          className="sm:text-4xl font-cinzel text-3xl md:text-4xl text-[#fff] mb-2"
         >
           What Our Clients Say
         </motion.h2>
@@ -104,10 +104,10 @@ export default function Testimonials() {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <div className="bg-[#111111] border border-yellow-600/30 rounded-xl shadow-xl p-6 md:p-8 text-center mx-4 hover:shadow-yellow-500/20 transition-all h-full">
+              <div className="bg-[#b1b7e106] border border-blue-600/30 rounded-xl shadow-xl p-6 md:p-8 text-center mx-4 hover:shadow-blue-500/20 transition-all h-full">
                 <p className="italic text-gray-300 mb-4">“{t.message}”</p>
                 {renderStars(t.rating)}
-                <h4 className="text-lg font-semibold mt-4 text-yellow-300">
+                <h4 className="text-lg font-semibold mt-4 text-[#e0e6ff]">
                   {t.name}
                 </h4>
                 <span className="text-sm text-gray-500">{t.role}</span>

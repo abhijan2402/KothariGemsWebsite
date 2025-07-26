@@ -21,8 +21,8 @@ export default function Header() {
       onClick={() => setMenuOpen(false)}
       className={`block px-4 py-2 rounded transition duration-200 uppercase tracking-wider text-sm ${
         location.pathname === path
-          ? "text-yellow-500 font-semibold border-b border-yellow-400"
-          : "text-gray-300 hover:text-yellow-300"
+          ? "text-[#fff] font-semibold border-b border-[#fff]"
+          : "text-gray-300 hover:text-[#fff]"
       }`}
     >
       {label}
@@ -30,17 +30,15 @@ export default function Header() {
   );
 
   return (
-    <header className="bg-black backdrop-blur-sm sticky top-0 z-50 shadow-sm">
+    <header className="bg-transparent backdrop-blur-sm sticky top-0 z-50 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
         {/* Logo */}
         <Link
           to="/"
           className="text-3xl md:text-4xl font-bold tracking-wide flex items-center font-cinzel space-x-2 group"
         >
-          <span className="bg-gradient-to-r from-yellow-400 via-yellow-300 to-yellow-500 bg-clip-text text-transparent group-hover:brightness-110 transition duration-300">
-            Kothari
-          </span>
-          <span className="text-white group-hover:text-yellow-200 transition duration-300">
+          <span className="text-[#fff]">Kothari</span>
+          <span className="text-white group-hover:text-[#e0e6ff] transition duration-300">
             Gems
           </span>
         </Link>
@@ -55,13 +53,13 @@ export default function Header() {
           {menuOpen ? (
             <X
               size={28}
-              className="text-white hover:text-yellow-400 cursor-pointer"
+              className="text-white hover:[#e0e6ff] cursor-pointer"
               onClick={() => setMenuOpen(false)}
             />
           ) : (
             <Menu
               size={28}
-              className="text-white hover:text-yellow-400 cursor-pointer"
+              className="text-white hover:text-[#e0e6ff] cursor-pointer"
               onClick={() => setMenuOpen(true)}
             />
           )}

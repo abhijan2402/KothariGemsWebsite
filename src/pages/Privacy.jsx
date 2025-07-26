@@ -21,7 +21,7 @@ export default function PrivacyPolicy() {
         transition={{ duration: 0.6 }}
         className="max-w-6xl mx-auto text-center mb-14"
       >
-        <h1 className="text-4xl md:text-5xl font-bold text-yellow-400 font-cinzel">
+        <h1 className="text-4xl md:text-5xl font-bold text-[#e0e6ff] font-cinzel">
           Privacy Policy
         </h1>
         <p className="text-gray-400 mt-4 max-w-2xl mx-auto text-lg">

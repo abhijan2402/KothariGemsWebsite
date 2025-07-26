@@ -12,7 +12,7 @@ export default function ContactSection() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="sm:text-4xl font-cinzel text-3xl md:text-4xl text-yellow-400 mb-2">
+          <h2 className="sm:text-4xl font-cinzel text-3xl md:text-4xl text-[#fff] mb-2">
             Get in Touch
           </h2>
           <p className="text-gray-400 mb-6">
@@ -22,15 +22,15 @@ export default function ContactSection() {
 
           <div className="space-y-4 text-sm text-gray-300">
             <div className="flex items-center gap-3">
-              <Phone className="text-yellow-500" size={18} />
+              <Phone className="text-[#fff]" size={18} />
               <span>+91 98290 98489</span>
             </div>
             <div className="flex items-center gap-3">
-              <Mail className="text-yellow-500" size={18} />
+              <Mail className="text-text-[#fff]" size={18} />
               <span>info@kotharigems.com</span>
             </div>
             <div className="flex items-center gap-3">
-              <MapPin className="text-yellow-500" size={18} />
+              <MapPin className="text-text-[#fff]" size={18} />
               <span>Jaipur, Rajasthan, India</span>
             </div>
           </div>
@@ -38,7 +38,7 @@ export default function ContactSection() {
           <a
             href="https://wa.me/919876543210"
             target="_blank"
-            className="mt-8 inline-block bg-yellow-500 hover:bg-yellow-400 text-black font-semibold px-6 py-3 rounded-full transition"
+            className="mt-8 inline-block bg-[#e0e6ff] hover:bg-[#fff] text-black font-semibold px-6 py-3 rounded-full transition"
           >
             WhatsApp Us Now
           </a>
@@ -61,7 +61,7 @@ export default function ContactSection() {
             <input
               type="text"
               required
-              className="w-full bg-[#1a1a1a] text-white border border-gray-600 rounded px-4 py-2 focus:outline-none focus:border-yellow-400"
+              className="w-full bg-[#b1b7e106] text-white border border-gray-600 rounded px-4 py-2 focus:outline-none focus:border-[#e0e6ff]"
               placeholder="Enter your name"
             />
           </div>
@@ -70,7 +70,7 @@ export default function ContactSection() {
             <input
               type="email"
               required
-              className="w-full bg-[#1a1a1a] text-white border border-gray-600 rounded px-4 py-2 focus:outline-none focus:border-yellow-400"
+              className="w-full bg-[#b1b7e106] text-white border border-gray-600 rounded px-4 py-2 focus:outline-none focus:border-[#e0e6ff]"
               placeholder="Enter your email"
             />
           </div>
@@ -79,13 +79,13 @@ export default function ContactSection() {
             <textarea
               rows="5"
               required
-              className="w-full bg-[#1a1a1a] text-white border border-gray-600 rounded px-4 py-2 focus:outline-none focus:border-yellow-400"
+              className="w-full bg-[#b1b7e106] text-white border border-gray-600 rounded px-4 py-2 focus:outline-none focus:border-[#e0e6ff]"
               placeholder="Enter your query"
             ></textarea>
           </div>
           <button
             type="submit"
-            className="bg-yellow-500 hover:bg-yellow-400 text-black font-semibold px-6 py-3 rounded-full transition"
+            className="bg-[#e0e6ff] hover:bg-[#fff] text-black   font-semibold px-6 py-3 rounded-full transition"
           >
             Send Message
           </button>

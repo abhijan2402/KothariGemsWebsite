@@ -5,6 +5,7 @@ import { Star, Sparkles, Crown, Award, Gem, ShieldCheck } from "lucide-react";
 // Sample gem images for demo
 import gem1 from "../assets/gem1.avif";
 import gem2 from "../assets/gem2.avif";
+import { useNavigate } from "react-router-dom";
 
 const images = [gem1, gem2, gem1];
 
@@ -41,6 +42,7 @@ const letterVariants = {
 };
 
 export default function HeroSection() {
+  const navigate = useNavigate();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isLoaded, setIsLoaded] = useState(false);
 
@@ -58,61 +60,11 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center text-white overflow-hidden bg-black">
+    <section className="relative min-h-screen flex items-center justify-center text-white overflow-hidden ">
       {/* Background image slider with enhanced transitions */}
 
       {/* Enhanced gradient overlay with animated elements */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/60 to-black/90 z-10" />
-
-      {/* Animated particles */}
-      <div className="absolute inset-0 z-15 pointer-events-none">
-        {[...Array(30)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-1 h-1 bg-yellow-400 rounded-full opacity-30"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-            }}
-            animate={{
-              y: [0, -100, 0],
-              opacity: [0.3, 0.8, 0.3],
-              scale: [1, 1.5, 1],
-            }}
-            transition={{
-              duration: 4 + Math.random() * 2,
-              repeat: Infinity,
-              delay: Math.random() * 2,
-            }}
-          />
-        ))}
-      </div>
-
-      {/* Floating decorative elements */}
-      <div className="absolute inset-0 z-15 pointer-events-none">
-        {floatingElements.map((element, i) => (
-          <motion.div
-            key={i}
-            className="absolute text-yellow-400/20"
-            style={{
-              left: `${10 + i * 15}%`,
-              top: `${20 + i * 10}%`,
-            }}
-            animate={{
-              y: [0, -30, 0],
-              rotate: [0, 360],
-              opacity: [0.2, 0.5, 0.2],
-            }}
-            transition={{
-              duration: element.duration,
-              repeat: Infinity,
-              delay: element.delay,
-            }}
-          >
-            {element.icon}
-          </motion.div>
-        ))}
-      </div>
+      {/* <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/60 to-black/90 z-10" /> */}
 
       {/* Main content */}
       <motion.div
@@ -126,7 +78,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.8 }}
-          className="inline-flex items-center gap-2 bg-black/40 backdrop-blur-sm border border-yellow-400/30 rounded-full px-4 py-2 mb-6 text-sm text-yellow-300"
+          className="inline-flex items-center gap-2 bg-black/40 backdrop-blur-sm border border-blue-400/30 rounded-full px-4 py-2 mb-6 text-sm text-[#e0e6ff]"
         >
           <Crown size={16} />
           <span>Premium Gem Collection</span>
@@ -180,12 +132,12 @@ export default function HeroSection() {
           </p>
 
           {/* Feature highlights */}
-          <div className="flex flex-wrap justify-center gap-4 text-sm text-yellow-300">
+          <div className="flex flex-wrap justify-center gap-4 text-sm text-[#e0e6ff] ">
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 1.2, duration: 0.6 }}
-              className="flex items-center gap-2 bg-black/30 backdrop-blur-sm rounded-full px-3 py-1"
+              className="flex items-center gap-2 bg-black/30 backdrop-blur-sm border border-blue-400/30 px-4 rounded-full py-1"
             >
               <Gem size={14} />
               <span>Certified Authentic</span>
@@ -194,7 +146,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 1.4, duration: 0.6 }}
-              className="flex items-center gap-2 bg-black/30 backdrop-blur-sm rounded-full px-3 py-1"
+              className="flex items-center gap-2 border border-blue-400/30 bg-black/30 backdrop-blur-sm rounded-full px-3 py-1"
             >
               <Star size={14} />
               <span>Premium Quality</span>
@@ -203,7 +155,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 1.6, duration: 0.6 }}
-              className="flex items-center gap-2 bg-black/30 backdrop-blur-sm rounded-full px-3 py-1"
+              className="flex items-center gap-2 border border-blue-400/30 bg-black/30 backdrop-blur-sm rounded-full px-3 py-1"
             >
               <ShieldCheck size={14} />
               <span>Lifetime Guarantee</span>
@@ -219,8 +171,8 @@ export default function HeroSection() {
           className="flex flex-col sm:flex-row gap-4 justify-center items-center"
         >
           {/* Primary CTA */}
-          <motion.a
-            href="#products"
+          <motion.div
+            onClick={() => navigate("/products")}
             className="group relative inline-flex items-center gap-3 bg-gradient-to-r from-yellow-500 to-yellow-400 hover:from-yellow-400 hover:to-yellow-300 text-black font-bold px-8 py-4 rounded-full text-lg transition-all duration-300 overflow-hidden"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -246,14 +198,14 @@ export default function HeroSection() {
                 repeatDelay: 3,
               }}
             />
-          </motion.a>
+          </motion.div>
 
           {/* Secondary CTA */}
           <motion.a
             href="https://wa.me/919782488408?text=Hi, I want to explore your gem collection"
             target="_blank"
             rel="noreferrer"
-            className="group relative inline-flex items-center gap-3 border-2 border-yellow-400 hover:border-yellow-300 text-yellow-400 hover:text-yellow-300 font-semibold px-8 py-4 rounded-full text-lg transition-all duration-300 backdrop-blur-sm bg-black/20 hover:bg-black/40"
+            className="group relative inline-flex items-center gap-3 border-2 border-[#fff] hover:border-[#e0e6ff] text-[#fff] hover:text-[#e0e6ff] font-semibold px-8 py-4 rounded-full text-lg transition-all duration-300 backdrop-blur-sm bg-black/20 hover:bg-black/40"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >

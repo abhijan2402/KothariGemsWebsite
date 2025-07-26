@@ -11,7 +11,7 @@ export default function Contact() {
         transition={{ duration: 0.6 }}
         className="text-center max-w-3xl mx-auto mb-12"
       >
-        <h1 className="text-4xl md:text-5xl font-bold text-yellow-400 font-cinzel">
+        <h1 className="text-4xl md:text-5xl font-bold text-[#e0e6ff] font-cinzel">
           Get In Touch
         </h1>
         <p className="text-gray-400 mt-4 text-lg">
@@ -27,43 +27,43 @@ export default function Contact() {
           initial={{ opacity: 0, x: -40 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
-          className="bg-[#111] rounded-xl p-8 border border-yellow-500/10 shadow-lg"
+          className="bg-[#b1b7e10e] rounded-xl p-8 border border-blue-500/10 shadow-lg"
         >
           <div className="mb-6">
-            <label className="block mb-2 text-yellow-300 text-sm font-medium">
+            <label className="block mb-2 text-[#fff] text-sm font-medium">
               Your Name
             </label>
             <input
               type="text"
               placeholder="Enter your name"
-              className="w-full p-3 bg-black text-white border border-yellow-500/20 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400"
+              className="w-full p-3 bg-[#b1b7e106] text-white border border-blue-500/20 rounded-md focus:outline-none focus:ring-2 focus:ring-[#e0e6ff]"
               required
             />
           </div>
           <div className="mb-6">
-            <label className="block mb-2 text-yellow-300 text-sm font-medium">
+            <label className="block mb-2 text-[#fff] text-sm font-medium">
               Email Address
             </label>
             <input
               type="email"
               placeholder="Enter your email"
-              className="w-full p-3 bg-black text-white border border-yellow-500/20 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400"
+              className="w-full p-3 bg-[#b1b7e106] text-white border border-blue-500/20 rounded-md focus:outline-none focus:ring-2 focus:ring-[#e0e6ff]"
               required
             />
           </div>
           <div className="mb-6">
-            <label className="block mb-2 text-yellow-300 text-sm font-medium">
+            <label className="block mb-2 text-[#fff] text-sm font-medium">
               Message
             </label>
             <textarea
               placeholder="Write your message..."
-              className="w-full p-3 bg-black text-white border border-yellow-500/20 rounded-md h-32 resize-none focus:outline-none focus:ring-2 focus:ring-yellow-400"
+              className="w-full p-3 bg-[#b1b7e106] text-white border border-blue-500/20 rounded-md h-32 resize-none focus:outline-none focus:ring-2 focus:ring-[#e0e6ff]"
               required
             ></textarea>
           </div>
           <button
             type="submit"
-            className="w-full mt-2 bg-yellow-400 text-black py-3 rounded-md hover:bg-yellow-300 transition"
+            className="w-full mt-2 bg-[#e0e6ff] text-black py-3 rounded-md hover:bg-[#fff] transition"
           >
             Send Message
           </button>
@@ -74,11 +74,11 @@ export default function Contact() {
           initial={{ opacity: 0, x: 40 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
-          className="flex flex-col justify-between bg-[#111] rounded-xl p-8 border border-yellow-500/10 shadow-lg"
+          className="flex flex-col justify-between bg-[#b1b7e10e] rounded-xl p-8 border border-yellow-500/10 shadow-lg"
         >
           <div className="space-y-8">
             <div>
-              <h3 className="text-xl font-semibold text-yellow-400 mb-2">
+              <h3 className="text-xl font-semibold text-[#e0e6ff] mb-2">
                 Office Address
               </h3>
               <p className="text-gray-300">
@@ -88,15 +88,15 @@ export default function Contact() {
               </p>
             </div>
             <div>
-              <h3 className="text-xl font-semibold text-yellow-400 mb-2">
+              <h3 className="text-xl font-semibold text-[#e0e6ff] mb-2">
                 Contact Info
               </h3>
               <p className="text-gray-300 flex items-center gap-2">
-                <Phone className="text-yellow-400" size={18} />
+                <Phone className="text-[#e0e6ff]" size={18} />
                 +91 98290 98489
               </p>
               <p className="text-gray-300 flex items-center gap-2 mt-1">
-                <Mail className="text-yellow-400" size={18} />
+                <Mail className="text-[#e0e6ff]" size={18} />
                 contact@kotharigems.com
               </p>
             </div>
@@ -106,7 +106,7 @@ export default function Contact() {
             href="https://wa.me/919782488408?text=Hi, I have an enquiry about your gemstones"
             target="_blank"
             rel="noreferrer"
-            className="mt-8 text-center border border-yellow-500 text-yellow-400 hover:bg-yellow-400 hover:text-black px-6 py-3 rounded-full text-sm transition"
+            className="mt-4 text-center border border-[#fff] text-[#ffff] hover:bg-[#fff] hover:text-black px-4 py-3 rounded-full text-sm transition w-full"
           >
             Enquire via WhatsApp
           </a>

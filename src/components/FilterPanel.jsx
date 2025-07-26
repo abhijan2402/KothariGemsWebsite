@@ -26,8 +26,8 @@ export default function FilterPanel({ onFilterSelect }) {
           }}
           className={`px-4 py-2 rounded-sm w-28 border ${
             !selectedCategory
-              ? "bg-yellow-400 text-black"
-              : "border-yellow-400 text-yellow-400"
+              ? "bg-[#e0e6ff] text-black"
+              : "border-[#fff] text-[#fff]"
           }`}
         >
           All
@@ -42,8 +42,8 @@ export default function FilterPanel({ onFilterSelect }) {
             }}
             className={`px-4 py-2  rounded-sm w-28 border ${
               selectedCategory?.id === cat.id
-                ? "bg-yellow-400 text-black"
-                : "border-yellow-400 text-yellow-400"
+                ? "bg-[#e0e6ff] text-black"
+                : "border-[#fff] text-[#fff]"
             }`}
           >
             {cat.name}
@@ -62,8 +62,8 @@ export default function FilterPanel({ onFilterSelect }) {
               }}
               className={`px-3 py-1 rounded border text-sm ${
                 selectedSubcategory === sub
-                  ? "bg-yellow-300 text-black"
-                  : "text-yellow-300 border-yellow-300"
+                  ? "bg-[#e0e6ff] text-black"
+                  : "text-[#fff] border-[#fff]"
               }`}
             >
               {sub}

@@ -17,19 +17,33 @@ export default function MainLayout() {
   ];
 
   return (
-    <div className="relative min-h-screen bg-black text-white">
+    <div
+      style={{
+        background: `
+      radial-gradient(circle at center, 
+      #1e1f5f 0%,      /* darker indigo center */
+        #151a4d 30%,     /* deep transition tone */
+        #0f1123 65%,     /* navy black */
+        #000000 100%     /* black outer edges */
+      )
+    `,
+      }}
+      className="relative min-h-screen text-white "
+    >
+      <div className="absolute inset-0 bg-gradient-radial from-white/10 via-transparent to-transparent opacity-20 pointer-events-none" />
+
       {/* Particle background — shared across all pages */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         {[...Array(30)].map((_, i) => (
           <motion.div
             key={`dot-${i}`}
-            className="absolute w-1 h-1 bg-yellow-400 rounded-full opacity-30"
+            className="absolute w-2 h-2 bg-[#9bbdf8] rounded-full opacity-30"
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
             }}
             animate={{
-              y: [0, -100, 0],
+              y: [0, -80, 0],
               opacity: [0.3, 0.8, 0.3],
               scale: [1, 1.5, 1],
             }}
@@ -47,7 +61,7 @@ export default function MainLayout() {
         {floatingElements.map((element, i) => (
           <motion.div
             key={`float-${i}`}
-            className="absolute text-yellow-400/20"
+            className="absolute text-blue-400/20"
             style={{
               left: `${10 + i * 15}%`,
               top: `${20 + i * 10}%`,

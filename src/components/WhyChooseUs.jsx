@@ -28,7 +28,7 @@ export default function WhyChooseUs() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="font-cinzel text-3xl md:text-4xl text-yellow-400 mb-6">
+          <h2 className="font-cinzel text-3xl md:text-4xl text-[#fff] mb-6">
             Why Choose Kothari Gems?
           </h2>
           <p className="text-gray-300 mb-6">

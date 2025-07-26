@@ -19,28 +19,27 @@ export default function AboutSection() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl sm:text-4xl md:text-4xl font-cinzel text-3xl md:text-4xl text-yellow-400 mb-2">
+          <h2 className=" sm:text-4xl  font-cinzel text-3xl md:text-4xl text-[#fff] mb-2">
             About Us
           </h2>
           <p className="text-gray-300 mb-4 leading-relaxed">
-            Established in 2006, Kothari Gems has carved out a unique name for
-            itself in the gemstone manufacturing industry.
+            Since 2008, Kothari Gems has established itself as a leading name in
+            the gemstone crafting and supply sector.
           </p>
           <p className="text-gray-400 mb-4">
-            Over the years, we have successfully developed a trusted brand name
-            and a diverse customer base. We cater not only to the big brands but
-            also to emerging talents in the industry with equal dedication.
+            Over time, we’ve built a reputation for excellence, serving both
+            global jewelry brands and independent designers with the same
+            passion and reliability.
           </p>
           <p className="text-gray-400 mb-4">
-            Our consistent service has led to strong trading relationships with
-            gemstone buyers from the USA, UK, Italy, Spain, Germany, Australia,
-            Japan, Latin America, Thailand & many more countries.
+            Our commitment to quality and timely delivery has allowed us to
+            foster long-term partnerships with clients in the USA, Europe, Asia,
+            Australia, and beyond.
           </p>
           <p className="text-gray-400">
-            With experienced artisans and state-of-the-art manufacturing units,
-            we ensure top-quality gemstones cut and polished in our own
-            factories. We uphold strict standards for polish, proportion, and
-            size, driving innovation and excellence across the industry.
+            Backed by skilled artisans and advanced in-house facilities, we
+            produce premium gemstones with precision and care — ensuring
+            brilliance, accuracy, and innovation in every piece.
           </p>
         </motion.div>
 
@@ -59,10 +58,10 @@ export default function AboutSection() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
               viewport={{ once: true }}
-              className="bg-[#111111] border border-yellow-600/30 rounded-xl shadow-md p-6 flex flex-col items-center text-center hover:shadow-yellow-500/20 transition-all"
+              className="bg-[#b1b7e106] border border-blue-600/30 rounded-xl shadow-md p-6 flex flex-col items-center text-center hover:shadow-blue-500/20 transition-all"
             >
-              <div className="text-yellow-400 mb-3">{item.icon}</div>
-              <h3 className="text-3xl font-bold text-yellow-300">
+              <div className="text-[#e0e6ff] mb-3">{item.icon}</div>
+              <h3 className="text-3xl font-bold text-[#e0e6ff]">
                 {item.number}+
               </h3>
               <p className="text-sm text-gray-400 mt-1">{item.label}</p>

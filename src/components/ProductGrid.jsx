@@ -33,9 +33,9 @@ const products = [
 
 export default function ProductGrid() {
   return (
-    <section className="bg-black text-white py-20 px-4 md:px-10">
+    <section className="bg-transparent text-white py-20 px-4 md:px-10">
       <div className="max-w-7xl mx-auto text-center mb-14">
-        <h2 className="text-3xl md:text-4xl font-cinzel text-yellow-400 mb-4">
+        <h2 className="text-3xl md:text-4xl font-cinzel text-[#fff] mb-4">
           Our Finest Collection
         </h2>
         <p className="text-gray-400 max-w-2xl mx-auto">
@@ -52,7 +52,7 @@ export default function ProductGrid() {
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: index * 0.2 }}
             viewport={{ once: true }}
-            className="bg-[#111] rounded-xl overflow-hidden border border-yellow-500/20 hover:border-yellow-500/40 shadow-lg hover:shadow-yellow-700/30 transition-shadow"
+            className="bg-[#b1b7e106] rounded-xl overflow-hidden border border-blue-500/20 hover:border-blue-500/40 shadow-lg hover:shadow-blue-700/30 transition-shadow"
           >
             <img
               src={product.image}
@@ -60,12 +60,12 @@ export default function ProductGrid() {
               className="w-full h-56 object-cover"
             />
             <div className="p-5 flex flex-col gap-2">
-              <h3 className="text-xl text-yellow-300 font-semibold">
+              <h3 className="text-xl text-[#e0e6ff] font-semibold">
                 {product.name}
               </h3>
               <p className="text-gray-400 text-sm">{product.description}</p>
               <div className="flex justify-between items-center text-sm mt-2">
-                <span className="text-yellow-400 font-medium">
+                <span className="text-[#e0e6ff] font-medium">
                   {product.price}
                 </span>
                 <span className="text-gray-500">Origin: {product.origin}</span>
@@ -74,7 +74,7 @@ export default function ProductGrid() {
                 href={`https://wa.me/919782488408?text=Hi, I want to enquire about: ${product.name}`}
                 target="_blank"
                 rel="noreferrer"
-                className="mt-4 text-center border border-yellow-500 text-yellow-400 hover:bg-yellow-400 hover:text-black px-4 py-2 rounded-full text-sm transition w-full"
+                className="mt-4 text-center border border-[#fff] text-[#ffff] hover:bg-[#fff] hover:text-black px-4 py-2 rounded-full text-sm transition w-full"
               >
                 Enquire on WhatsApp
               </a>
