@@ -27,16 +27,17 @@ export default function ProductPage() {
     };
     fetchData();
   }, []);
-
   const handleFilterSelect = (category, subcategory) => {
     const filtered = products.filter((p) => {
       return (
-        (!category || p.category === category) &&
-        (!subcategory || p.subcategory === subcategory)
+        (!category || p.categoryName === category) &&
+        (!subcategory || p.subcategoryName === subcategory)
       );
     });
     setFilteredProducts(filtered);
   };
+
+  console.log(products);
 
   return (
     <>
