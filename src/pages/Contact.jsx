@@ -103,7 +103,7 @@ export default function Contact() {
           </div>
 
           <a
-            href="https://wa.me/919782488408?text=Hi, I have an enquiry about your gemstones"
+            href="https://wa.me/+919829098489?text=Hi, I have an enquiry about your gemstones"
             target="_blank"
             rel="noreferrer"
             className="mt-4 text-center border border-[#fff] text-[#ffff] hover:bg-[#fff] hover:text-black px-4 py-3 rounded-full text-sm transition w-full"
