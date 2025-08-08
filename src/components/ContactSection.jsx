@@ -36,7 +36,7 @@ export default function ContactSection() {
           </div>
 
           <a
-            href="https://wa.me/919876543210"
+            href="https://wa.me/+919829098489"
             target="_blank"
             className="mt-8 inline-block bg-[#e0e6ff] hover:bg-[#fff] text-black font-semibold px-6 py-3 rounded-full transition"
           >

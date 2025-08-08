@@ -118,7 +118,7 @@ export default function ProductPage() {
                   </span>
                 </div>
                 <a
-                  href={`https://wa.me/919782488408?text=Hi, I want to enquire about: ${
+                  href={`https://wa.me/+919829098489?text=Hi, I want to enquire about: ${
                     product.title || product.name
                   }`}
                   target="_blank"
