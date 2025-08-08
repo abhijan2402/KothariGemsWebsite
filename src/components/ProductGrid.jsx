@@ -28,10 +28,22 @@ export default function ProductGrid() {
           id: doc.id,
           ...doc.data(),
         }));
-        // Sort newest first in JS
-        const sorted = data.sort(
-          (a, b) => b.created_at?.toMillis() - a.created_at?.toMillis()
-        );
+
+        // Safe sorting: handle Timestamp, string, or missing value
+        const sorted = data.sort((a, b) => {
+          const aTime = a.created_at
+            ? typeof a.created_at.toMillis === "function"
+              ? a.created_at.toMillis()
+              : new Date(a.created_at).getTime()
+            : 0;
+          const bTime = b.created_at
+            ? typeof b.created_at.toMillis === "function"
+              ? b.created_at.toMillis()
+              : new Date(b.created_at).getTime()
+            : 0;
+          return bTime - aTime; // newest first
+        });
+
         setProducts(sorted.slice(0, 3)); // only 3 most recent
       } catch (error) {
         console.error("Error fetching featured products:", error);
@@ -54,7 +66,7 @@ export default function ProductGrid() {
 
       {products.length === 0 ? (
         <div className="flex flex-col items-center justify-center text-center text-gray-400 py-16">
-          <Star className="w-8 h-8 mb-3 text-yellow-400" />
+          <Star className="w-8 h-8 mb-3 text-[#FCD937]" />
           <p className="text-lg font-medium text-[#e0e6ff]">
             No featured products available right now
           </p>
